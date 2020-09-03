@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WritingAddComponent } from './component/writing-add/writing-add.component';
-import { WritingService } from './service/writing.service';
+//import { WritingService } from './service/writing.service';
 import { WritingListComponent } from './component/writing-list/writing-list.component';
 import { HomeComponent } from './component/home/home.component'
 
@@ -23,7 +23,7 @@ import { HomeComponent } from './component/home/home.component'
     HttpClientModule,
     FormsModule
   ],
-  providers: [WritingService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

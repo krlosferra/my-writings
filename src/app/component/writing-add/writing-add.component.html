@@ -1,0 +1,55 @@
+<div class="container-fluid">
+  <div class="form">
+    <form class="text-center border border-light p-5" *ngIf="!submitted">
+
+      <div class="row">
+        <div class="col-sm-6">
+          <!-- Title -->
+          <input type="text" [(ngModel)]="writing.title" name="title" id="title" class="form-control mb-4"
+            placeholder="Title" />
+        </div>
+        <div class="col-sm-6">
+          <!-- Location -->
+          <input type="text" [(ngModel)]="writing.location" name="location" id="location" class="form-control mb-4"
+            placeholder="Location" />
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Choosen -->
+        <div class="col-sm-6">
+          <div class="col-sm-1">
+            <label class="custom-control-label" for="choosen">Choosen</label>
+          </div>
+          <div class="col-sm-1">
+            <input type="checkbox" class="custom-control-input mb-4" id="choosen" [(ngModel)]="writing.choosen"
+              name="choosen">
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <!-- Note -->
+          <input type="text" [(ngModel)]="writing.note" name="note" id="note" class="form-control mb-4"
+            placeholder="Note" />
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="row">
+        <div class="col-sm-12">
+          <textarea id="text" [(ngModel)]="writing.text" name="text" class="form-control md-textarea mb-4" rows="4"
+            placeholder="Text"></textarea>
+        </div>
+      </div>
+
+      <!-- Save button -->
+      <div class="form-group">
+        <button class="btn btn-success" type="submit" (click)="saveWriting()">Save</button>
+      </div>
+
+    </form>
+    <div *ngIf="submitted">
+      <h4>You submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newWriting()">Add</button>
+    </div>
+  </div>
+</div>

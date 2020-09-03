@@ -1,0 +1,59 @@
+<div class="list row">
+    <div class="col-md-8">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Search by title" [(ngModel)]="title" />
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" (click)="searchTitle()">
+                    Search
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <h4>Writings List</h4>
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let writing of writings; let i = index"
+                [class.active]="i == currentIndex" (click)="setActiveWriting(writing, i)">
+                {{ writing.title }}
+            </li>
+        </ul>
+
+        <button class="m-3 btn btn-sm btn-danger" (click)="removeAllWritings()">
+            Remove All
+        </button>
+    </div>
+    <div class="col-md-6">
+        <div *ngIf="currentWriting">
+            <h4>Writing</h4>
+            <div>
+                <label><strong>Title:</strong></label>
+                {{ currentWriting.title }}
+            </div>
+            <div>
+                <label><strong>Note:</strong></label>
+                {{ currentWriting.note }}
+            </div>
+            <div>
+                <label><strong>Location:</strong></label>
+                {{ currentWriting.location }}
+            </div>
+            <div>
+                <label><strong>Text:</strong></label>
+                {{ currentWriting.text }}
+            </div>
+            <div>
+                <label><strong>Choosen:</strong></label>
+                {{ currentWriting.choosen ? "Favorite" : "Common" }}
+            </div>
+
+            <a class="badge badge-warning" routerLink="/writings/{{ currentWriting.id }}">
+                Edit
+            </a>
+        </div>
+
+        <div *ngIf="!currentWriting">
+            <br />
+            <p>Please click on a Tutorial...</p>
+        </div>
+    </div>
+</div>

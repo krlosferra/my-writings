@@ -5,15 +5,20 @@
       <!-- Heading Row -->
       <div class="row align-items-center my-5">
         <div class="col-lg-7">
-          <img class="img-fluid rounded mb-4 mb-lg-0" src="http://placehold.it/900x400" alt="">
+          <div class="container">
+            <h1>Ultimo escrito!</h1>
+            <h4>{{oneWriting.title}}</h4>
+            <p>{{oneWriting.note}}</p>
+            <blockquote>
+              <p>{{oneWriting.text}}</p>
+              <footer>{{oneWriting.note}}</footer>
+            </blockquote>
+          </div>
         </div>
         <!-- /.col-lg-8 -->
         <div class="col-lg-5">
-          <h1 class="font-weight-light">Business Name or Tagline</h1>
-          <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it
-            makes a great use of the standard Bootstrap core components. Feel free to use this template for any project
-            you want!</p>
-          <a class="btn btn-primary" href="#">Call to Action!</a>
+          <h1 class="font-weight-light">Crear nuevo texto!</h1>
+          <a class="btn btn-primary" routerLink="/add">Aceptar</a>
         </div>
         <!-- /.col-md-4 -->
       </div>
